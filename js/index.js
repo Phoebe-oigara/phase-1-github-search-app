@@ -48,3 +48,12 @@ let fetchRepositories = username => {
 let renderRepositoryDetails = repos => {
     repos.forEach(repo => createReposCardElement(repo) )
  }
+
+ // Creates the card and it's child elements that will hold the fetched repositories
+ let createReposCardElement = repo => {
+    const repositoryCard = document.createElement("div");
+    repositoryCard.className = "repo-card"
+    document.querySelector("#repos-list").appendChild(repositoryCard);
+    repositoryCard.innerHTML = `<h2 class="margin-none">${repo.name}</h2>`
+                               + `<p class="fs14 margin-none">${repo.description}</p>`
+ }
