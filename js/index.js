@@ -35,3 +35,11 @@ let createUserCardElement = user => {
        fetchRepositories(user)
     })
  }
+
+ // Fetching repositories using the url provided.
+let fetchRepositories = username => {
+    fetch(`https://api.github.com/users/${username.login}/repos`)
+    .then(resp => resp.json())
+    .then(repos => { renderRepositoryDetails(repos) })
+    .catch(error => { alert("Error fetching repositories!") });
+ }
