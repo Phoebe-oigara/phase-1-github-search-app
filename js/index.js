@@ -43,3 +43,8 @@ let fetchRepositories = username => {
     .then(repos => { renderRepositoryDetails(repos) })
     .catch(error => { alert("Error fetching repositories!") });
  }
+
+ // Rendering the repository details to the DOM
+let renderRepositoryDetails = repos => {
+    repos.forEach(repo => createReposCardElement(repo) )
+ }
